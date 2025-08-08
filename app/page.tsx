@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-center p-24">
@@ -10,6 +12,19 @@ export default function Home() {
           <p className="text-xl text-dark-text-secondary max-w-2xl mx-auto">
             Transform your Spotify listening data into beautiful, interactive visualizations and actionable insights
           </p>
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-8">
+          <Link
+            href="/dashboard"
+            className="inline-flex items-center px-8 py-4 bg-spotify-green hover:bg-spotify-green/90 text-black font-semibold rounded-full transition-all duration-200 transform hover:scale-105"
+          >
+            <span>Get Started</span>
+            <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
         </div>
 
         {/* Coming Soon Features */}
@@ -34,7 +49,30 @@ export default function Home() {
             <p className="text-dark-text-secondary text-sm">Analyze your music taste diversity across different genres</p>
           </div>
         </div>
+
+        {/* Features Preview */}
+        <div className="mt-20 text-center">
+          <h2 className="text-2xl font-semibold text-white mb-4">Coming in Phase 2</h2>
+          <p className="text-dark-text-secondary mb-8">Advanced audio intelligence features</p>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            <div className="p-4 bg-dark-surface/50 border border-dark-border/50 rounded-lg">
+              <h4 className="text-spotify-green font-medium mb-2">Musical DNA</h4>
+              <p className="text-sm text-dark-text-secondary">Personal audio feature analysis and mood tracking</p>
+            </div>
+            
+            <div className="p-4 bg-dark-surface/50 border border-dark-border/50 rounded-lg">
+              <h4 className="text-spotify-green font-medium mb-2">Smart Recommendations</h4>
+              <p className="text-sm text-dark-text-secondary">AI-powered music suggestions based on your taste</p>
+            </div>
+            
+            <div className="p-4 bg-dark-surface/50 border border-dark-border/50 rounded-lg">
+              <h4 className="text-spotify-green font-medium mb-2">Social Insights</h4>
+              <p className="text-sm text-dark-text-secondary">Compare your taste with friends and discover new music</p>
+            </div>
+          </div>
+        </div>
       </div>
     </main>
-  )
+  );
 }
